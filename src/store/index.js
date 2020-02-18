@@ -13,7 +13,7 @@ import restfulState from './restfulState';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const restfulObjects = {
-	user: restfulState.create(`${API_HOST}/users`, 'user'),
+	show: restfulState.create(`${API_HOST}/shows`, 'shows'),
 };
 
 export const action = {

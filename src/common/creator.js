@@ -17,22 +17,6 @@ export default {
 		}
 	},
 	reducer: {
-		// fromObject(actionMap, defaultValue) {
-		// 	return (state = defaultValue, action) => {
-		// 		let newState = state;
-		// 		Object.entries(actionMap).forEach(([actionSet, handler]) => {
-		// 			actionSet.split('|').forEach(responseAction => {
-		// 				if (responseAction === action.type && typeof handler !== 'undefined') {
-		// 					newState = handler(newState, action);
-		// 				}
-		// 			});
-		// 		});
-		// 		return newState;
-		// 	}
-		// },
-		// actions(...args) {
-		// 	return args.join('|');
-		// }
 		fromObject(actionMap, defaultValue) {
 			return (state = defaultValue, action) => {
 				if (typeof actionMap[action.type] !== 'undefined') {

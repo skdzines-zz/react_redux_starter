@@ -1,3 +1,3 @@
 module.exports = {
-	API_HOST: 'https://jsonplaceholder.typicode.com'
+	API_HOST: 'http://api.tvmaze.com'
 }

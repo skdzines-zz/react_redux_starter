@@ -106,13 +106,14 @@ export default {
 						return new ExtendedArray( ...state, payload );
 					},
 					[READ_SUCCESS]: (state, action) => {
-						const { response, ...rest } = action.payload;
-						const data = Object.entries(rest).map(([index, value]) => !isNaN(index) && value );
-						const removeIds = data.map(p => parseInt(p.id));
-						return new ExtendedArray(
-							...(state.filter(record => !removeIds.includes(parseInt(record.id)))),
-							...data
-						);
+						return [...state, action.payload];
+						// const { response, ...rest } = action.payload;
+						// const data = Object.entries(rest).map(([index, value]) => !isNaN(index) && value );
+						// const removeIds = data.map(p => parseInt(p.id));
+						// return new ExtendedArray(
+						// 	...(state.filter(record => !removeIds.includes(parseInt(record.id)))),
+						// 	...data
+						// );
 					},
 					[READ_ALL_SUCCESS]: (state, action) => {
 						return new ExtendedArray( ...(action.payload.length ? action.payload : new ExtendedArray()) );

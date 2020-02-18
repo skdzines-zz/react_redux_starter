@@ -1,4 +1,5 @@
 html {
+	font-size: 10px;
 	body {
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
@@ -12,13 +13,21 @@ html {
 		bottom: 0;
 		line-height: 1.2;
 
-		div#application {
+		article {
 			height: 100%;
-			width: 100%;
+			padding: 1rem;
 			* {
 				box-sizing: border-box;
-				// user-select: none;
 			}
+		}
+		h1 {
+			font-size: 3rem;
+		}
+		h2 {
+			font-size: 2.4rem;
+		}
+		h3 {
+			font-size: 2rem;
 		}
 	}
 }
