@@ -25,7 +25,7 @@ const Show = () => {
 			<React.Fragment>
 				<h1>{selectedShow[0].name}</h1>
 				<img src={selectedShow[0].image.medium} />
-				<p dangerouslySetInnerHTML={{__html: selectedShow[0].summary}}></p>
+				<p>{selectedShow[0].summary.replace(/<[/]?[pb]>/g, '')}</p>
 			</React.Fragment>
 		: null
 	);

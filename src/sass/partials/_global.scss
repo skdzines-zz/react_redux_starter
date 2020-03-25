@@ -19,15 +19,26 @@ html {
 			* {
 				box-sizing: border-box;
 			}
+			> .content {
+				margin: 1rem 0;
+				border: 1px solid $primaryColor;
+				padding: 1rem;
+			}
 		}
 		h1 {
 			font-size: 3rem;
+			padding: 1rem;
+			margin-bottom: 1rem;
+			background-color: $primaryColor;
 		}
 		h2 {
 			font-size: 2.4rem;
 		}
 		h3 {
 			font-size: 2rem;
+		}
+		a {
+			color: $linkColor;
 		}
 	}
 }

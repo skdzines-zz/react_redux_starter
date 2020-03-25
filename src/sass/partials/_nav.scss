@@ -1,0 +1,21 @@
+nav {
+	text-align: center;
+}
+
+@mixin headerNav {
+	ul {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+@mixin footerNav {
+	ul {
+		display: flex;
+		justify-content: flex-end;
+		a {
+			color: red;
+			padding: 0 1rem;
+		}
+	}
+}

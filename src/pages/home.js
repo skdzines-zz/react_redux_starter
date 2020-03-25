@@ -16,11 +16,13 @@ const Home = () => {
 	return (
 		<React.Fragment>
 			<h1>Shows</h1>
+			<ul className="shows">
 			{show.list && show.list.map(show => {
-				return <div key={show.id} className="show">
+				return <li key={show.id} className="show">
 					<Link to={`show/${show.id}`}>{show.name}</Link>
-				</div>
+				</li>
 			})}
+			</ul>
 		</React.Fragment>
 	);
 }

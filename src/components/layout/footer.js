@@ -1,7 +1,8 @@
 import React from 'react';
+import Nav from './nav';
 
 export default () => (
 	<footer>
-		<p>I'm the footer</p>
+		<Nav />
 	</footer>
 );
