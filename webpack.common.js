@@ -1,7 +1,7 @@
 const path = require('path');
 const application = require('./package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -35,23 +35,12 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['public']),
+		new CleanWebpackPlugin({cleanAfterEveryBuildPatterns:['public']}),
 		new MiniCssExtractPlugin({
 			filename: "css/[name].css",
 			chunkFilename: "[name].[id].css"
 		}),
-		new HtmlWebpackPlugin({
-			inject: false,
-			template: require('html-webpack-template'),
-			title: application.name,
-			meta: [
-				{
-					name: 'viewport',
-					content: 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0'
-				}
-			],
-			lang: 'en-US'
-		})
+		new HtmlWebpackPlugin()
 	],
 	output: {
 		filename: 'js/[name].js',
@@ -60,22 +49,13 @@ module.exports = {
 	},
 	optimization: {
 		splitChunks: {
-			chunks: 'all',
-			minSize: 30000,
-			minChunks: 1,
-			maxAsyncRequests: 5,
-			maxInitialRequests: 3,
-			automaticNameDelimiter: '.',
-			name: true,
 			cacheGroups: {
-				vendors: {
-					test: /[\\/]node_modules[\\/]/
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all',
 				},
-				default: {
-					minChunks: 2,
-					reuseExistingChunk: true
-				}
-			}
-		}
-	}
+			},
+		},
+	},
 };

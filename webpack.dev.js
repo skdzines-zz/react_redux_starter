@@ -1,16 +1,16 @@
 const common = require('./webpack.common.js');
-const merge = require('webpack-merge');
-const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const path = require('path');
 
 module.exports = merge(common, {
 	mode: 'development',
 	devtool: 'inline-source-map',
 	devServer: {
-		contentBase: './public',
-		hot: true
-	},
-	plugins: [
-		new webpack.NamedModulesPlugin(),
-		new webpack.HotModuleReplacementPlugin()
-	]
+		contentBase: path.join(__dirname, 'public'),
+		host: "localhost",
+		hot: true,
+		liveReload: true,
+		historyApiFallback: true,
+		port: 8000
+	}
 });

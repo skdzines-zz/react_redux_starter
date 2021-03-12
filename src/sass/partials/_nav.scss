@@ -14,7 +14,7 @@ nav {
 		display: flex;
 		justify-content: flex-end;
 		a {
-			color: red;
+			color: $linkColor;
 			padding: 0 1rem;
 		}
 	}

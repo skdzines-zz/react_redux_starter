@@ -1,3 +1,14 @@
 {
-	"presets": [["env", { modules: false }], "react", "stage-3"]
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": "> 0.25%, not dead, not ie <= 11, not op_mini all"
+			}
+		],
+	  	"@babel/preset-react"
+	],
+	"plugins": [
+	 	 "@babel/plugin-proposal-class-properties"
+	]
 }
