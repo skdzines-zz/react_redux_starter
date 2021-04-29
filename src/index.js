@@ -10,5 +10,5 @@ ReactDOM.render(
 	<Provider store={ store }>
 		<Routes />
 	</Provider>,
-	document.body.appendChild(document.createElement('div'))
+	document.getElementById('App')
 );
