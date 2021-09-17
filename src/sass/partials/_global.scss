@@ -23,6 +23,8 @@ html {
 				margin: 1rem 0;
 				border: 1px solid $primaryColor;
 				padding: 1rem;
+                position: relative;
+                min-height: 90vh;
 			}
 		}
 		h1 {

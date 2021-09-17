@@ -6,7 +6,7 @@ export default () => (
 	<nav>
 		<ul>
 			{
-				pages.map(page => page.displayInNav ? <Link to={page.paths[0]}>{page.title}</Link> : null)
+				pages.map(page => page.displayInNav ? <Link key={page.title} to={page.paths[0]}>{page.title}</Link> : null)
 			}
 		</ul>
 	</nav>

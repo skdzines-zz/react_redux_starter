@@ -1,6 +1,7 @@
 import Home from 'pages/home';
 import About from 'pages/about';
 import Show from 'pages/show';
+import Tests from 'pages/tests';
 
 export default [
 	{
@@ -26,6 +27,14 @@ export default [
 		paths: [
 			'/show',
 			'/show/:id',
+		]
+	},
+    {
+		component: Tests,
+		title: 'Tests',
+		displayInNav: true,
+		paths: [
+			'/tests'
 		]
 	}
 ];
