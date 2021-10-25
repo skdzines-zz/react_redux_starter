@@ -1,7 +1,7 @@
 const path = require('path');
 const application = require('./package.json');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
@@ -44,10 +44,10 @@ module.exports = {
 				'!index.html'
 			]
 		}),
-		new MiniCssExtractPlugin({
-			filename: "css/[name].css",
-			chunkFilename: "[name].[id].css"
-		})
+		// new MiniCssExtractPlugin({
+		// 	filename: "css/[name].css",
+		// 	chunkFilename: "[name].[id].css"
+		// })
 	],
 	output: {
 		filename: 'js/[name].js',
